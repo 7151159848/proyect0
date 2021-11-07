@@ -1,0 +1,238 @@
+/*variables de color*/
+:root{
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --grisClaro: #DFE9F3;
+}
+/*glovales*/
+html{
+    font-size:62.5%;/*Los rem se utiñlizan para manejar mejor los pixees em dispositivos de alta definicion*/
+    box-sizing: border-box;
+    scroll-snap-type: y proximity;/*alineacion*/
+}
+/*Sclor Snap*/
+.formulario{
+    scroll-snap-align:center;
+    scroll-snap-stop: always;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body{
+    font-size:16px;
+    font-family: 'Krub', sans-serif;/*para agregar el color en la pagina debe ser en body*/
+    background-image: linear-gradient(to top, var(--grisClaro),var(--blanco) 100%);
+}
+.contenedor{
+    width: 120rem;
+    margin: 0 auto;
+}
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem,3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;/*trnaformar en mayusculas*/
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;/*quita el color del borde del boton*/
+}
+@media(min-width: 768px){
+.boton{
+     width: auto;
+}
+
+.boton:hover{/*colocarse sobre un elemento*/
+cursor:pointer;/*mmarcar la selecion del boton cuando esta el cursor enciama*/
+}
+.sombra{
+    
+    box-shadow: 0px 12px 15px -1px rgba(176,164,176,1);/*webki es usada por chorme, y most es la que utiliza fire fox */
+background-color: var(--blanco);
+padding: 2rem;
+border-radius: 1rem;
+}
+}
+
+/*Tipografia*/
+h1{
+    font-size: 3.8rem;
+
+}
+h2{
+    font-size: 2.8rem;
+
+}
+h3{
+    font-size: 1.8rem;/*1rem = 10px*/
+
+}
+h1,h2,h3{/*base para la letra*/
+    text-align: center;
+}
+/*Titulos*/
+ .titulo span{
+    font-size: 2rem;
+}
+/*Utilidades*/
+.w-sm-100{
+    width: 100%;
+}
+@media(min-width: 768px){
+    .w-sm-100{
+    width: auto;
+    }
+
+}
+.flex{
+    display: flex;
+}
+.alinear-derecha{
+    justify-content: flex-end;
+
+}
+/*Navegacion principal*/
+.nav-bg{
+    background-color: var(--secundario);
+}
+.navegacion-principal{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.navegacion-principal a{
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+.navegacion-principal a:hover{
+background-color: var(--primario);
+color: var(--oscuro);
+}
+/*Hero*/
+.hero{
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 450px;
+    position: relative;/*La clase pade siempre tiene que ser relativa*/
+    margin-bottom: 2rem;
+}
+.contenido-hero{
+ position:absolute;
+ background-color: rgba( 0,0,0,.7 );/*Anterior*/
+ background-color: rgb( 0 0 0 / 70% );
+ width: 100%;
+ height: 100%;
+
+ display: flex;/*alinear vertivalmente y orisontalmente*/
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+.contenido-hero h2,
+.contenido-hero p{
+    color: var(--blanco)
+}
+.contenido-hero .ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
+/*Servicios*/
+@media(min-width: 768px){
+    .servicios{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);/*fr hacer automaticamente la divsion de porcentajes por columna*/
+      column-gap: 1rem;
+      /* grid: 200px 800px / 300px 300px;*/
+    }
+}
+.servicio{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+.servicio h3{
+ color: var(--secundario);
+ font-weight: normal;
+}
+.servicio p{
+    line-height: 2;
+    text-align: center;
+}
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;/*alineacion orizontal*/
+    align-items: center;/*alineacion certical*/
+}
+/* Contacto*/
+.formulario{
+    background-color: var(--gris);
+    width: min(60rem, 100%);/*utilizar el valor mas pequeño*/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset{
+    border: none;
+}
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;/*tamaño de fuente*/
+    text-transform: uppercase;
+    font-weight: 700;/*color de las letras*/
+    margin-bottom: 2rem;/*separacion de las letras de los demas elementos del formulario*/
+    color: var(--primario);/*aplicacion del color promario*/
+}
+@media (min-width: 768px){/*investigar*/
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: 50% 50%;/*distribucion de la mitad*/
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;/*separacion de las columnas*/    
+    }
+    
+    .canpo:nth-child(3),
+    .canpo:nth-child(4){
+        grid-column: 1 / 3;
+    }
+}
+.campo{
+    margin-bottom: irem;/*tamaño del boton*/
+}
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+
+}
+.input-text{/*.campo input[type="text"],selecion pos tipo de datos*/
+    width: 100%;/*tamano*/
+    border: none;/*color de borde en los campos*/
+    padding: 1.5rem;
+    border-radius: .5rem;/*redondeo de campos*/
+    border: none;
+}
+/*.enviar.boton{El boton toma un ancho del 100%
+    width: 100%;
+}*/
+.footer{
+    text-align: center;
+}
